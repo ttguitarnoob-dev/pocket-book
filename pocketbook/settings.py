@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'pocketbook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pocketbook',
+        'NAME': 'pocket_book',
     }
 }
 

@@ -1,26 +1,28 @@
+
+from datetime import datetime
 from email.policy import default
 from django.db import models
 
 MONTH_CHOICES = (
-    ('JAN', 'January'),
-    ('FEB', 'February'),
-    ('MAR', 'March'),
-    ('APR', 'April'),
-    ('MAY', 'May'),
-    ('JUN', 'June'),
-    ('JUL', 'July'),
-    ('AUG', 'August'),
-    ('SEP', 'September'),
-    ('OCT', 'October'),
-    ('NOV', 'November'),
-    ('DEC', 'December'),
+    ('January', 'January'),
+    ('February', 'February'),
+    ('March', 'March'),
+    ('April', 'April'),
+    ('May', 'May'),
+    ('June', 'June'),
+    ('July', 'July'),
+    ('August', 'August'),
+    ('September', 'September'),
+    ('October', 'October'),
+    ('November', 'November'),
+    ('December', 'December'),
 )
 
 # Create your models here.
 
 
 class Budget(models.Model):
-    name = models.CharField(
+    budget_month = models.CharField(
         max_length=20,
         choices=MONTH_CHOICES,
         default='JAN'
@@ -30,12 +32,12 @@ class Budget(models.Model):
     # Year Add later
 
     def __str__(self) -> str:
-        return self.name
+        return self.budget_month
 
 class Expense(models.Model):
     name = models.CharField(max_length=100)
     amount = models.IntegerField(default=0)
-    due_date = models.IntegerField(default=0)
+    due_date = models.DateField(default=datetime.now)
     budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='expenses')
     
     def __str__(self) -> str:
