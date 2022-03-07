@@ -36,7 +36,7 @@ class Expense(models.Model):
     name = models.CharField(max_length=100)
     amount = models.IntegerField(default=0)
     due_date = models.IntegerField(default=0)
-    budget = models.ForeignKey(Budget, on_delete=models.CASCADE)
+    budget = models.ForeignKey(Budget, on_delete=models.CASCADE, related_name='expenses')
     
     def __str__(self) -> str:
         return self.name
