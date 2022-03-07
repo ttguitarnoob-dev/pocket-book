@@ -5,6 +5,9 @@ PocketBook (working name) Will be an app designed to help you plan your monthly 
 React front end with basic route navigation
 Django Rest framework backend with postgresql database
 ## List of backend models and their properties
+### ERD
+![Screen Shot 2022-03-07 at 11 23 11 AM](https://user-images.githubusercontent.com/96032956/157085594-ca0d3b96-2883-4326-a94c-98d3094d1d36.png)
+
 ### BudgetList
 - Retrieve every created budget per user
 ### CreateBudget
