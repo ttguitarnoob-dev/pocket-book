@@ -22,7 +22,10 @@ class Home(TemplateView):
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['budgets'] = Budget.objects.all()
+        return context
 
 # Create Budget
 
