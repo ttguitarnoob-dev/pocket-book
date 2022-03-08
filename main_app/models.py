@@ -34,6 +34,10 @@ class Budget(models.Model):
     def __str__(self) -> str:
         return self.budget_month
 
+    def total_income(self):
+        total = self.base_income + self.additional_income
+        return total
+
 class Expense(models.Model):
     name = models.CharField(max_length=100)
     amount = models.IntegerField(default=0)
@@ -42,3 +46,5 @@ class Expense(models.Model):
     
     def __str__(self) -> str:
         return self.name
+
+    

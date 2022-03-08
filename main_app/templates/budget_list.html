@@ -4,4 +4,11 @@
 {% block content%}
     <h1>There's no place like budget list</h1>
 
-{% endblock %}
+    {% for budget in budgets %}
+    <p>test</p>
+    
+    {% empty %}
+<p>no budgets yet</p>
+
+    {% endfor %}
+    {% endblock %}
