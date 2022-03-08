@@ -18,6 +18,15 @@ MONTH_CHOICES = (
     ('December', 'December'),
 )
 
+YEAR_CHOICES = (
+    ('2022', '2022'),
+    ('2023', '2023'),
+    ('2024', '2024'),
+    ('2025', '2025'),
+    ('2026', '2026'),
+    ('2027', '2027'),
+)
+
 # Create your models here.
 
 
@@ -26,6 +35,11 @@ class Budget(models.Model):
         max_length=20,
         choices=MONTH_CHOICES,
         default='JAN'
+    )
+    budget_year = models.CharField(
+        max_length=5,
+        choices=YEAR_CHOICES,
+        default='2022'
     )
     base_income = models.IntegerField(default=0)
     additional_income = models.IntegerField(default=0)

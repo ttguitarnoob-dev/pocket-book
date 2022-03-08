@@ -2,12 +2,12 @@
 
 
 {% block content%}
-    <h1>There's no place like budget create</h1>
+<h1>There's no place like budget create</h1>
 
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Create Budget">
-    </form>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Create Budget">
+</form>
 
 {% endblock %}

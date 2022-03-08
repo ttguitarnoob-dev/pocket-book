@@ -3,7 +3,17 @@
 
 {% block content%}
     <h1>There's no place like budget details</h1>
-    <h2>Budget for {{budget.budget_month}}</h2>
+    <h2>Budget for {{budget.budget_month}}, {{budget.budget_year}}</h2>
     <p>Total Income: ${{budget.total_income}}</p>
+    {% for expense in budget.expenses.all %}
+    <p>{{expense.name}}: ${{expense.amount}} - Due Date: {{expense.due_date}}</p>
+    
+    
+    {% empty %}
+    <p>Nothing to see here</p>
+    
+    {% endfor %}
+    <a href="{% url 'budget_list' %}">Back to Budget List</a>
+
 
 {% endblock %}
