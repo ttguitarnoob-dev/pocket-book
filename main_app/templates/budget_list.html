@@ -5,7 +5,8 @@
     <h1>There's no place like budget list</h1>
 
     {% for budget in budgets %}
-    <p>test{{budget.budget_month}}</p>
+    <p></p>
+    <a href="{% url 'budget_details' budget.pk%}">{{budget.budget_month}}</a>
     
     {% empty %}
 <p>no budgets yet</p>
