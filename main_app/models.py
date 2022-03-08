@@ -3,6 +3,7 @@ from datetime import datetime
 from email.policy import default
 from django.db import models
 
+
 MONTH_CHOICES = (
     ('January', 'January'),
     ('February', 'February'),
@@ -27,10 +28,12 @@ YEAR_CHOICES = (
     ('2027', '2027'),
 )
 
+
 # Create your models here.
 
 
 class Budget(models.Model):
+    name = models.CharField(max_length=100, default="New Budget")
     budget_month = models.CharField(
         max_length=20,
         choices=MONTH_CHOICES,
@@ -51,6 +54,14 @@ class Budget(models.Model):
     def total_income(self):
         total = self.base_income + self.additional_income
         return total
+        
+    def total_expenses(self, thing):
+        total = 0
+        # for expense in self.expenses:
+        print('OMGOMG', thing)
+        # print("dofmfdoimfoi", self.expenses.all)
+        
+
 
 class Expense(models.Model):
     name = models.CharField(max_length=100)
@@ -60,5 +71,9 @@ class Expense(models.Model):
     
     def __str__(self) -> str:
         return self.name
+    def testes(self, thing):
+        
+        # final_total = self.total_expense + self.amount
+        print('tesstestss', self, thing)
 
     

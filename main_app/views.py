@@ -15,7 +15,6 @@ class Home(TemplateView):
     template_name = "home.html"
 
 
-
 # Budget List
 
 
@@ -40,18 +39,20 @@ class CreateBudget(CreateView):
         form.instance.user = self.request.user
         return super(CreateBudget, self).form_valid(form)
 
-
     def get_success_url(self):
-        return reverse('budget_details', kwargs = {'pk': self.object.pk})
+        return reverse('budget_details', kwargs={'pk': self.object.pk})
 
 # Detail Page
+
 
 class BudgetDetail(DetailView):
     model = Budget
     template_name = "budget_detail.html"
 
+    
 
-# Update Budget
+        # Update Budget
+
 
 class BudgetUpdate(UpdateView):
     model = Budget

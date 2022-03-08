@@ -6,7 +6,7 @@
 
     {% for budget in budgets %}
     <p></p>
-    <a href="{% url 'budget_details' budget.pk%}">{{budget.budget_month}}</a>
+    <a href="{% url 'budget_details' budget.pk%}">{{budget.name}}</a>
     
     {% empty %}
 <p>no budgets yet</p>
