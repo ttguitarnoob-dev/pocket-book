@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content%}
+    <h1>There's no place like budget list</h1>
+
+    {% for budget in budgets %}
+    <p></p>
+    <a href="{% url 'budget_details' budget.pk%}">{{budget.name}}</a>
+    
+    {% empty %}
+<p>no budgets yet</p>
+
+    {% endfor %}
+    {% endblock %}
