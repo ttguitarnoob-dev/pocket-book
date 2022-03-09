@@ -4,6 +4,7 @@ from .models import Budget, Expense
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -31,7 +32,7 @@ class BudgetList(TemplateView):
 
 class CreateBudget(CreateView):
     model = Budget
-    fields = ['budget_month', 'base_income', 'additional_income']
+    fields = ['name', 'budget_month', 'budget_year', 'base_income', 'additional_income']
     template_name = "create_budget.html"
     success_url = "/budgets/"
 
@@ -66,3 +67,15 @@ class BudgetUpdate(UpdateView):
 class BudgetDelete(DeleteView):
     model = Budget
     template_name = "budget_delete_confirmation.html"
+
+
+# Create Expense
+class ExpenseCreate(CreateView):
+    def post(self, request, pk):
+        name = request.POST.get("name")
+        amount = request.POST.get("amount")
+        due_date = request.POST.get("due_date")
+        budget = Budget.objects.get(pk=pk)
+        Expense.objects.create(name = name, amount = amount, due_date = due_date, budget = budget)
+        return redirect('budget_details', pk=pk)
+        
