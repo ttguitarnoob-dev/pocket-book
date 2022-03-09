@@ -2,6 +2,7 @@
 from datetime import datetime
 from email.policy import default
 from django.db import models
+from django.contrib.auth.models import User
 
 
 MONTH_CHOICES = (
@@ -46,7 +47,8 @@ class Budget(models.Model):
     )
     base_income = models.IntegerField(default=0)
     additional_income = models.IntegerField(default=0)
-    # Year Add later
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
 
     def __str__(self) -> str:
         return self.budget_month
