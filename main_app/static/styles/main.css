@@ -1,8 +1,23 @@
 body {
-    background-color: rgb(31, 63, 90);
+    background-color: rgb(148, 177, 192) !important;
     color: wheat;
     min-height: 100vh;
 
+}
+
+.card {
+    margin-top: 4vh !important;
+    padding: 20px !important;
+    border-radius: 30px !important;
+    background-color: rgb(78, 96, 110) !important;
+    color: aliceblue !important;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(0, 0, 0, 0.8) -6px -2px 16px 0px;
+    
+
+}
+
+.mb-3 {
+    margin-top: 20px;
 }
 .navbar {
     display: flex;

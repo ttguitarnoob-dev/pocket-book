@@ -3,11 +3,40 @@
 
 
 {% block content %}
-<h1>{{budget.name}}</h1>
-<h2>Budget for {{budget.budget_month}}, {{budget.budget_year}}</h2>
+<div class="card">
+<h1 class="text-center">{{budget.name}}</h1>
+<h2 class="text-center">Budget for {{budget.budget_month}}, {{budget.budget_year}}</h2>
 <p>Total Income: ${{budget.total_income}}</p>
 
-{% for expense in budget.expenses.all %}
+<table class="table table-secondary table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Expense</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for expense in budget.expenses.all %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{expense.name}}</td>
+            <td>${{expense.amount}}</td>
+            <td>{{expense.due_date}}</td>
+        </tr>
+        {% empty %}
+
+        <p>No expenses added yet. Use the form below to add an expense.</p>
+
+        {% endfor %}
+        
+    </tbody>
+</table>
+<h3>Total Expenses: $9000</h3>
+<h3>Total Leftover: $-9000</h3>
+</div>
+<!-- {% for expense in budget.expenses.all %}
 
 <p>{{expense.name}}: ${{expense.amount}} - Due Date: {{expense.due_date}}</p>
 
@@ -15,21 +44,22 @@
 {% empty %}
 <p>No expenses added yet. Use the form below to add an expense.</p>
 
-{% endfor %}
-<div class="create-form">
+{% endfor %} -->
+<div class="mb-3">
     <h4>Create New Expense</h4>
     <form method="post" action="{% url 'create_expense' budget.pk %}">
         {% csrf_token %}
-        <label for="name">Name</label>
+        <label for="name" class="form-label">Name</label>
         <input type="text" name="name" id="name" placeholder="Enter Expense Name" required>
-        <label for="amount">Amount:</label>
+        <label for="amount" class="form-label">Amount:</label>
         <input type="number" name="amount" id="amount" placeholder="Expense Amount" required>
-        <label for="due_date">Due Date:</label>
+        <label for="due_date" class="form-label">Due Date:</label>
         <input type="date" name="due_date" id="due_date">
-        <input type="submit" value="Add Expense">
+        <input class="btn btn-secondary" data-bs-toggle="button" type="submit" value="Add Expense">
     </form>
 </div>
 <a href="{% url 'budget_list' %}">Back to Budget List</a>
+
 
 
 {% endblock %}
