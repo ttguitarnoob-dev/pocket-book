@@ -16,20 +16,19 @@
 <p>No expenses added yet. Use the form below to add an expense.</p>
 
 {% endfor %}
-
-<form method="post" action="{% url 'create_expense' budget.pk %}">
-    {% csrf_token %}
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Enter Expense Name" required>
-    <label for="amount">Amount:</label>
-    <input type="number" name="amount" id="amount" placeholder="Expense Amount" required>
-    <label for="due_date">Due Date:</label>
-    <input type="date" name="due_date" id="due_date">
-    <input type="submit" value="Add Expense">
-
-
-</form>
-
+<div class="create-form">
+    <h4>Create New Expense</h4>
+    <form method="post" action="{% url 'create_expense' budget.pk %}">
+        {% csrf_token %}
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter Expense Name" required>
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" id="amount" placeholder="Expense Amount" required>
+        <label for="due_date">Due Date:</label>
+        <input type="date" name="due_date" id="due_date">
+        <input type="submit" value="Add Expense">
+    </form>
+</div>
 <a href="{% url 'budget_list' %}">Back to Budget List</a>
 
 
