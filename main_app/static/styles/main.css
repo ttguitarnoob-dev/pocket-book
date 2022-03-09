@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(31, 63, 90);
+    color: wheat;
+}
+nav {
+    padding: 20px;
+    display: flex;
+    color: white;
+    background-color: black;
+}
+
+.user-info {
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
