@@ -2,14 +2,14 @@
 
 
 {% block content%}
-<div class="card" style="width: 80vw;">
+<div class="card mx-auto" style="width: 80vw;">
     <h1>Welcome to PocketBook!</h1>
     <hr>
-    <div style="width: 50rem;">
+    <div>
     <p>PocketBook is a simple monthly budget tool.  Go ahead and create an account.  Once that's done, you can create monthly budgets and see how your income fares against your expenses! Good Luck. </p>
 </div class="row">
-    <a href="{% url 'login' %}"><button>Log In</button></a>
-    <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+    <a class="mt-3" href="{% url 'login' %}"><button class="btn-secondary" style="border-radius: 10px;">Log In</button></a>
+    <a class="mt-3" href="{% url 'signup' %}"><button class="btn-secondary" style="border-radius: 10px;">Sign Up</button></a>
 </div>
 {% endblock %}
 
