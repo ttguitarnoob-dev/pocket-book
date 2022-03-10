@@ -90,6 +90,10 @@ class ExpenseCreate(CreateView):
 
 class ExpenseDelete(DeleteView):
     model = Expense
-    
-    def get_success_url(self, pk):
-        return reverse('budget_details', pk=pk)
+    template_name = 'expense_delete_confirmation.html'
+    success_url = reverse_lazy('budget_details')
+
+   
+
+    def get_success_url(self):
+        return reverse('budget_details', kwargs={'pk': self.object.budget_id})
