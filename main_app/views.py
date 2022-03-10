@@ -1,4 +1,4 @@
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.shortcuts import render
 from .models import Budget, Expense
 from django.views.generic.base import TemplateView
@@ -75,6 +75,7 @@ class BudgetUpdate(UpdateView):
 class BudgetDelete(DeleteView):
     model = Budget
     template_name = "budget_delete_confirmation.html"
+    success_url = '/budgets/'
 
 
 # Create Expense
@@ -86,4 +87,9 @@ class ExpenseCreate(CreateView):
         budget = Budget.objects.get(pk=pk)
         Expense.objects.create(name = name, amount = amount, due_date = due_date, budget = budget)
         return redirect('budget_details', pk=pk)
-        
+
+# class ExpenseDelete(DeleteView):
+#     model = Expense
+    
+#     def get_success_url(self, pk):
+#         return reverse('budget_details', pk=pk)

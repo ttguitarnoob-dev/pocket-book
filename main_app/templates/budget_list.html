@@ -2,14 +2,17 @@
 
 
 {% block content%}
-    <h1>There's no place like budget list</h1>
+<div class="card budget-list mx-auto" style="width: 20rem;">
+    <h1 class="text-center text-capitalize">{{user.username}} Budgets</h1>
+    <hr>
 
     {% for budget in budgets %}
-    <p></p>
-    <a href="{% url 'budget_details' budget.pk%}">{{budget.name}}</a>
-    
+    <div class="text-center mt-3">
+        <a href="{% url 'budget_details' budget.pk%}"><button class="btn btn-secondary" style="border-radius: 10px;">{{budget.budget_month}}, {{budget.budget_year}}</button></a> 
+        <a href="{% url 'budget_delete' budget.pk %}"><button class="btn btn-secondary" style="border-radius: 10px;"><i class="fa-solid fa-trash-can "></i></button></a>
+    </div>
     {% empty %}
-<p>no budgets yet</p>
-
+    <p>no budgets yet</p>
     {% endfor %}
-    {% endblock %}
+</div>
+{% endblock %}

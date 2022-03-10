@@ -19,27 +19,39 @@ body {
 .mb-3 {
     margin-top: 20px;
 }
-.navbar {
+
+.budget-list a{
+    max-width: fit-content !important;
+}
+
+/* .navbar {
     display: flex;
 
     
 
-}
-nav {
+} */
+/* nav {
     width: 100%;
     padding: 20px;
     background-color: rgb(0, 0, 0);
-}
+} */
 
 
-.user-info {
+/* .user-info {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+} */
+
+/* a {
+    color: white !important;
+    font-size: 20px;
+    text-decoration: none !important;
+} */
+
+.btn-secondary {
+    padding: 20px !important;
 }
 
-a {
-    color: white;
-    font-size: 20px;
-    text-decoration: none;
-}
+
+
