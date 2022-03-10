@@ -88,8 +88,8 @@ class ExpenseCreate(CreateView):
         Expense.objects.create(name = name, amount = amount, due_date = due_date, budget = budget)
         return redirect('budget_details', pk=pk)
 
-# class ExpenseDelete(DeleteView):
-#     model = Expense
+class ExpenseDelete(DeleteView):
+    model = Expense
     
-#     def get_success_url(self, pk):
-#         return reverse('budget_details', pk=pk)
+    def get_success_url(self, pk):
+        return reverse('budget_details', pk=pk)
