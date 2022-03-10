@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<p>Poooey {{budget.total_expenses}}</p>
 <div class="card">
     <h1 class="text-center">{{budget.name}}</h1>
     <h2 class="text-center">Budget for {{budget.budget_month}}, {{budget.budget_year}}</h2>
@@ -35,8 +36,8 @@
 
         </tbody>
     </table>
-    <h3>Total Expenses: $9000</h3>
-    <h3>Total Leftover: $-9000</h3>
+    <h3>Total Expenses: ${{budget.total_expenses}}</h3>
+    <h3>Total Leftover: {{budget.total_leftover}}</h3>
 </div>
 <!-- {% for expense in budget.expenses.all %}
 

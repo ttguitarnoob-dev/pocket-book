@@ -57,12 +57,23 @@ class Budget(models.Model):
         total = self.base_income + self.additional_income
         return total
         
-    def total_expenses(self, thing):
+    def total_expenses(self):
         total = 0
-        # for expense in self.expenses:
-        print('OMGOMG', thing)
-        # print("dofmfdoimfoi", self.expenses.all)
-        
+        expenses = Expense.objects.filter(budget_id=self.id)
+        for thing in expenses:
+            total += thing.amount
+        return total
+    
+    def total_leftover(self):
+        income = self.base_income + self.additional_income
+        total_expenses = 0
+        expenses = Expense.objects.filter(budget_id=self.id)
+        for thing in expenses:
+            total_expenses += thing.amount
+        leftover = income - total_expenses
+        return leftover
+
+
 
 
 class Expense(models.Model):
