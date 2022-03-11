@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(148, 177, 192) !important;
+    /* background-color: rgb(148, 177, 192) !important; */
+    background: linear-gradient(32deg, rgba(134,162,177,1) 0%, rgba(59,93,126,1) 100%) !important;
     color: wheat;
     min-height: 100vh;
 
@@ -8,8 +9,10 @@ body {
 .card {
     margin-top: 4vh !important;
     padding: 20px !important;
+    border: 1px solid rgb(89, 126, 175) !important;
     border-radius: 30px !important;
-    background-color: rgb(78, 96, 110) !important;
+    background: linear-gradient(32deg, rgba(93,122,138,1) 0%, rgba(43,68,93,1) 100%) !important;
+    /* background-color: rgb(78, 96, 110) !important; */
     color: aliceblue !important;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(0, 0, 0, 0.8) -6px -2px 16px 0px;
     

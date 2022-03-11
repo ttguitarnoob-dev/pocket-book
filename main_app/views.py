@@ -65,9 +65,15 @@ class BudgetDetail(DetailView):
 
 class BudgetUpdate(UpdateView):
     model = Budget
-    fields = ['budget_month', 'base_income', 'additional_income']
+    fields = ['name', 'budget_month', 'budget_year', 'base_income', 'additional_income']
     template_name = "budget_update.html"
-    success_url = "/budgets/"
+    success_url = reverse_lazy('budget_details')
+
+   
+
+    def get_success_url(self):
+        print('OPMGOMG', self)
+        return reverse('budget_details', kwargs={'pk': self.object.pk})
 
 
 # Delete Budget

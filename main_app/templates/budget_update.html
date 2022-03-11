@@ -2,6 +2,12 @@
 
 
 {% block content%}
-    <h1>There's no place like budget update</h1>
-
+<div class="card mx-auto">
+    <h1 class="text-center">Edit Budget</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-secondary" style="border-radius: 10px;" type="submit" value="Update Budget">
+    </form>
+</div>
 {% endblock %}

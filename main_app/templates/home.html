@@ -7,10 +7,13 @@
     <hr>
     <div>
     <p>PocketBook is a simple monthly budget tool.  Go ahead and create an account.  Once that's done, you can create monthly budgets and see how your income fares against your expenses! Good Luck. </p>
-</div class="row">
+</div>
+{% if user.is_authenticated %}
+<div>
     <a class="mt-3" href="{% url 'login' %}"><button class="btn-secondary" style="border-radius: 10px;">Log In</button></a>
     <a class="mt-3" href="{% url 'signup' %}"><button class="btn-secondary" style="border-radius: 10px;">Sign Up</button></a>
 </div>
+{% endif %}
 {% endblock %}
 
 
