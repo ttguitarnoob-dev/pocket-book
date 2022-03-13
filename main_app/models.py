@@ -84,9 +84,3 @@ class Expense(models.Model):
     
     def __str__(self) -> str:
         return self.name
-    def testes(self, thing):
-        
-        # final_total = self.total_expense + self.amount
-        print('tesstestss', self, thing)
-
-    

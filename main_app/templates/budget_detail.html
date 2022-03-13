@@ -40,15 +40,7 @@
     <h3>Total Expenses: ${{budget.total_expenses}}</h3>
     <h3>Total Leftover: ${{budget.total_leftover}}</h3>
 </div>
-<!-- {% for expense in budget.expenses.all %}
 
-<p>{{expense.name}}: ${{expense.amount}} - Due Date: {{expense.due_date}}</p>
-
-
-{% empty %}
-<p>No expenses added yet. Use the form below to add an expense.</p>
-
-{% endfor %} -->
 <div class="card mb-3">
     <h4 class="mb-4">Create New Expense</h4>
     <form method="post" action="{% url 'create_expense' budget.pk %}">

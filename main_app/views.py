@@ -24,15 +24,7 @@ class BudgetList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['budgets'] = Budget.objects.filter(user=self.request.user)
-
-        # name = self.request.GET.get('name')
-        # print(self.request)
-        # print(name)
-        # if name != None:
-        #     context['budgets'] = Budget.objects.filter(name__icontains=name)
-        # else:
-        #     context['']    
+        context['budgets'] = Budget.objects.filter(user=self.request.user)  
         return context
 
 # Create Budget

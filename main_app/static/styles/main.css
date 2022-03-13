@@ -1,9 +1,7 @@
 body {
-    /* background-color: rgb(148, 177, 192) !important; */
     background: linear-gradient(32deg, rgba(134,162,177,1) 0%, rgba(59,93,126,1) 100%) !important;
     color: wheat;
     min-height: 100vh;
-
 }
 
 .card {
@@ -15,8 +13,6 @@ body {
     /* background-color: rgb(78, 96, 110) !important; */
     color: aliceblue !important;
     box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(0, 0, 0, 0.8) -6px -2px 16px 0px;
-    
-
 }
 
 .mb-3 {
@@ -26,31 +22,6 @@ body {
 .budget-list a{
     max-width: fit-content !important;
 }
-
-/* .navbar {
-    display: flex;
-
-    
-
-} */
-/* nav {
-    width: 100%;
-    padding: 20px;
-    background-color: rgb(0, 0, 0);
-} */
-
-
-/* .user-info {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-} */
-
-/* a {
-    color: white !important;
-    font-size: 20px;
-    text-decoration: none !important;
-} */
 
 .btn-secondary {
     padding: 20px !important;
