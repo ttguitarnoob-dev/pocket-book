@@ -24,14 +24,13 @@ function setDate(){
         month: '2-digit'
     })
     for (let i = 0; i < formatted.length; i++){
+        console.log('helloo')
         if (formatted[i] === '/'){
             finalFormatted += '-'
         } else {
             finalFormatted += formatted[i]
         }
-
     }
-    
     dateThing.value = finalFormatted
     
 }

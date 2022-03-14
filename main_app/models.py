@@ -75,7 +75,6 @@ class Budget(models.Model):
 
 
 
-
 class Expense(models.Model):
     name = models.CharField(max_length=100)
     amount = models.IntegerField(default=0)
