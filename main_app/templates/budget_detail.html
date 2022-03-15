@@ -13,7 +13,6 @@
     <table class="table table-secondary table-hover table-striped table-bordered" style="border: 2px solid black;">
         <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Expense</th>
                 <th scope="col">Amount</th>
                 <th scope="col">Due Date</th>
@@ -23,7 +22,6 @@
         <tbody>
             {% for expense in budget.expenses.all %}
             <tr>
-                <th scope="row">{{forloop.counter}}</th>
                 <td>{{expense.name}}</td>
                 <td>${{expense.amount}}</td>
                 <td>{{expense.due_date}}</td>
