@@ -65,7 +65,6 @@ class BudgetUpdate(UpdateView):
    
 
     def get_success_url(self):
-        print('OPMGOMG', self)
         return reverse('budget_details', kwargs={'pk': self.object.pk})
 
 
