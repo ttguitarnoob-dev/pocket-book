@@ -12,7 +12,8 @@
         <a href="{% url 'budget_delete' budget.pk %}"><button class="btn btn-secondary" style="border-radius: 10px;"><i class="fa-solid fa-trash-can "></i></button></a>
     </div>
     {% empty %}
-    <p>no budgets yet</p>
+    <p>No Budgets Yet</p>
+    <a href="{% url 'create_budget' %}"><button class="btn btn-secondary" style="border-radius: 10px;">Create One!</button></a>
     {% endfor %}
 </div>
 {% endblock %}

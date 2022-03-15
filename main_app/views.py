@@ -7,6 +7,7 @@ from django.views.generic import DetailView
 from django.shortcuts import redirect
 
 
+
 # Create your views here.
 
 # Home
